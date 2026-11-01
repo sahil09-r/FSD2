@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --color-bank-50: #eef5ff;
+  --color-bank-100: #d9e8ff;
+  --color-bank-200: #bcd6ff;
+  --color-bank-300: #8ebbff;
+  --color-bank-400: #5996ff;
+  --color-bank-500: #3370fc;
+  --color-bank-600: #1d52f1;
+  --color-bank-700: #1540de;
+  --color-bank-800: #1835b4;
+  --color-bank-900: #1a328d;
+  --color-bank-950: #142056;
+}
+
+@layer base {
+  html, body, #root { height: 100%; }
+  body { @apply bg-slate-50 font-sans text-slate-900 antialiased; }
+}
+
+@layer components {
+  .card { @apply rounded-2xl border border-slate-200 bg-white shadow-sm; }
+  .input {
+    @apply w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-bank-500 focus:ring-4 focus:ring-bank-100 disabled:bg-slate-100;
+  }
+  .label { @apply mb-1.5 block text-sm font-medium text-slate-700; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-primary { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-50 bg-gradient-to-r from-bank-600 to-bank-800 text-white shadow-sm hover:from-bank-700 hover:to-bank-900; }
+  .btn-secondary { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-50 border border-slate-300 bg-white text-slate-700 hover:bg-slate-50; }
+  .btn-danger { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-50 bg-gradient-to-r from-rose-600 to-rose-700 text-white hover:from-rose-700 hover:to-rose-800; }
+}
